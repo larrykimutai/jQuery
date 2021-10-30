@@ -3,26 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).on("mousemove", function (event){
+            $("#log").text("Mouse X: " + event.pageX + ", Y: " + event.pageY)
+        })
+
+
+        $(document).ready(function(){
+            $("#fb").on("click", function(){
+                $('#large img:last-child').remove();
+                $('#large').append('<img src="./img/facebook.png" style="height: 300px">')
+            });
+            $("#fb").on("mouseenter", function (){
+                $('.text > span').text('In: Facebook');
+                $(this).fadeTo("fast", .5)
+            });
+            $("#fb").on("mouseleave", function (){
+                $('.text2 > span').text('Out: Facebook');
+                $(this).fadeTo("fast", 1)
+            });
+            $("#fb").on("dblclick", function(){
+                window.open("https://www.facebook.com/").focus();
+            })
+
+
+
+            $("#inst").on("click", function(){
+                $('#large img:last-child').remove();
+                $('#large').append('<img src="./img/instagram.png" style="height: 300px">')
+            });
+            $("#inst").on("mouseenter", function (){
+                $('.text > span').text('In: Instagram');
+                $(this).fadeTo("fast", .5)
+            });
+            $("#inst").on("mouseleave", function (){
+                $('.text2 > span').text('Out: Instagram');
+                $(this).fadeTo("fast", 1)
+            });
+            $("#inst").on("dblclick", function(){
+                window.open("https://www.instagram.com/").focus();
+            })
+
+
+
+            $("#li").on("click", function(){
+                $('#large img:last-child').remove();
+                $('#large').append('<img src="./img/linkedin.png" style="height: 300px">')
+            });
+            $("#li").on("mouseenter", function (){
+                $('.text > span').text('In: LinkedIn');
+                $(this).fadeTo("fast", .5)
+            });
+            $("#li").on("mouseleave", function (){
+                $('.text2 > span').text('Out: LinkedIn');
+                $(this).fadeTo("fast", 1)
+            });
+            $("#li").on("dblclick", function(){
+                window.open("https://www.linkedin.com/").focus();
+            })
+
+
+
+            $("#pnt").on("click", function(){
+                $('#large img:last-child').remove();
+                $('#large').append('<img src="./img/pintrest.png" style="height: 300px">')
+            });
+            $("#pnt").on("mouseenter", function (){
+                $('.text > span').text('In: Pinterest');
+                $(this).fadeTo("fast", .5)
+            });
+            $("#pnt").on("mouseleave", function (){
+                $('.text2 > span').text('Out: Pinterest');
+                $(this).fadeTo("fast", 1)
+            });
+            $("#pnt").on("dblclick", function(){
+                window.open("https://www.pinterest.com/").focus();
+            })
+
+
+
+            $("#tt").on("click", function(){
+                $('#large img:last-child').remove();
+                $('#large').append('<img src="./img/twitter.png" style="height: 300px">')
+            });
+            $("#tt").on("mouseenter", function (){
+                $('.text > span').text('In: Twitter');
+                $(this).fadeTo("fast", .5)
+            });
+            $("#tt").on("mouseleave", function (){
+                $('.text2 > span').text('Out: Twitter');
+                $(this).fadeTo("fast", 1)
+            });
+            $("#tt").on("dblclick", function(){
+                window.open("https://twitter.com/").focus();
+            })
+
+
+
+            $("#yt").on("click", function(){
+                $('#large img:last-child').remove();
+                $('#large').append('<img src="./img/youtube.png" style="height: 300px">')
+            });
+            $("#yt").on("mouseenter", function (){
+                $('.text > span').text('In: YouTube');
+                $(this).fadeTo("fast", .5)
+            });
+            $("#yt").on("mouseleave", function (){
+                $('.text2 > span').text('Out: Youtube');
+                $(this).fadeTo("fast", 1)
+            });
+            $("#yt").on("dblclick", function(){
+                window.open("https://www.youtube.com/").focus();
+            })
+        });
+    </script>
 </head>
 <body>
 
 <div>
     <span style="width: 300px">
-        <img style="width: auto; height: 100px;" src="./img/facebook.png">
-        <img style="width: auto; height: 100px;" src="./img/instagram.png">
-        <img style="width: auto; height: 100px;" src="./img/linkedin.png">
+        <img id="fb" style="width: auto; height: 100px;" src="./img/facebook.png">
+        <img id="inst" style="width: auto; height: 100px;" src="./img/instagram.png">
+        <img id="li" style="width: auto; height: 100px;" src="./img/linkedin.png">
         <br>
-        <img style="width: auto; height: 100px;" src="./img/pintrest.png">
-        <img style="width: auto; height: 100px;" src="./img/twitter.png">
-        <img style="width: auto; height: 100px;" src="./img/youtube.png">
+        <img id="pnt" style="width: auto; height: 100px;" src="./img/pintrest.png">
+        <img id="tt" style="width: auto; height: 100px;" src="./img/twitter.png">
+        <img id="yt" style="width: auto; height: 100px;" src="./img/youtube.png">
 
     </span>
 </div>
 
-<div>
-    <h1>In</h1>
-
+<div class="text">
+   <span>In: </span>
 </div>
+
+<div class="text2">
+    <span>Out: </span>
+</div>
+
+<div id="log"></div>
+
+<div id="large"></div>
+
 
 </body>
 </html>
